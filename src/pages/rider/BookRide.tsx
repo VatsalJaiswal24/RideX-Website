@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import RiderLayout from "@/components/layouts/RiderLayout";
 import { 
@@ -37,7 +36,7 @@ const rideOptions = [
   {
     id: "ride-1",
     type: "Standard",
-    price: 12.50,
+    price: 950,
     time: "3 min away",
     seats: 4,
     icon: <Car className="h-8 w-8" />
@@ -45,7 +44,7 @@ const rideOptions = [
   {
     id: "ride-2",
     type: "Premium",
-    price: 18.75,
+    price: 1450,
     time: "5 min away",
     seats: 4,
     icon: <Car className="h-8 w-8" />
@@ -53,7 +52,7 @@ const rideOptions = [
   {
     id: "ride-3",
     type: "XL",
-    price: 24.50,
+    price: 1890,
     time: "8 min away",
     seats: 6,
     icon: <Users className="h-8 w-8" />
@@ -64,31 +63,31 @@ const rideOptions = [
 const availableDrivers = [
   {
     id: "driver-1",
-    name: "Michael Chen",
-    car: "Toyota Camry",
-    plate: "ABC123",
+    name: "Rajesh Kumar",
+    car: "Maruti Swift",
+    plate: "MH02 AB1234",
     rating: 4.9,
-    price: 12.50,
+    price: 950,
     eta: "3 min away",
     imgUrl: "https://i.pravatar.cc/150?img=60"
   },
   {
     id: "driver-2",
-    name: "Sarah Johnson",
-    car: "Honda Accord",
-    plate: "XYZ789",
+    name: "Sunil Verma",
+    car: "Hyundai i20",
+    plate: "DL01 XY7890",
     rating: 4.8,
-    price: 13.25,
+    price: 1025,
     eta: "6 min away",
     imgUrl: "https://i.pravatar.cc/150?img=32"
   },
   {
     id: "driver-3",
-    name: "David Wilson",
-    car: "Ford Fusion",
-    plate: "LMN456",
+    name: "Amit Patel",
+    car: "Honda City",
+    plate: "KA05 MN4567",
     rating: 4.7,
-    price: 12.75,
+    price: 980,
     eta: "8 min away",
     imgUrl: "https://i.pravatar.cc/150?img=69"
   }
@@ -120,17 +119,14 @@ const BookRide = () => {
       return;
     }
     
-    // In a real app, this would call an API to book the ride
     setIsBookingConfirmed(true);
   };
   
   const handleConfirmRide = () => {
-    // In a real app, this would confirm the booking in the database
     setIsBookingConfirmed(false);
     
     toast.success("Ride booked successfully!");
     
-    // Reset form
     setPickup("");
     setDestination("");
     setSelectedRide(null);
@@ -275,7 +271,7 @@ const BookRide = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="text-lg font-bold">${option.price.toFixed(2)}</div>
+                      <div className="text-lg font-bold">₹{option.price.toFixed(2)}</div>
                     </div>
                   </div>
                 ))}
@@ -321,7 +317,7 @@ const BookRide = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="text-lg font-bold">${driver.price.toFixed(2)}</div>
+                      <div className="text-lg font-bold">₹{driver.price.toFixed(2)}</div>
                     </div>
                   </div>
                 ))}
@@ -389,7 +385,7 @@ const BookRide = () => {
                     <div className="flex justify-between items-center mb-2">
                       <div className="text-sm">Ride Fare</div>
                       <div className="font-medium">
-                        ${selectedRide 
+                        ₹{selectedRide 
                           ? rideOptions.find(option => option.id === selectedRide)?.price.toFixed(2)
                           : selectedDriver
                             ? availableDrivers.find(driver => driver.id === selectedDriver)?.price.toFixed(2)
@@ -399,15 +395,15 @@ const BookRide = () => {
                     </div>
                     <div className="flex justify-between items-center mb-2">
                       <div className="text-sm">Service Fee</div>
-                      <div className="font-medium">$1.50</div>
+                      <div className="font-medium">₹99.00</div>
                     </div>
                     <div className="flex justify-between items-center pt-2 border-t mt-2">
                       <div className="font-medium">Total</div>
                       <div className="font-bold text-lg">
-                        ${selectedRide 
-                          ? (rideOptions.find(option => option.id === selectedRide)?.price || 0 + 1.5).toFixed(2)
+                        ₹{selectedRide 
+                          ? (rideOptions.find(option => option.id === selectedRide)?.price || 0 + 99).toFixed(2)
                           : selectedDriver
-                            ? (availableDrivers.find(driver => driver.id === selectedDriver)?.price || 0 + 1.5).toFixed(2)
+                            ? (availableDrivers.find(driver => driver.id === selectedDriver)?.price || 0 + 99).toFixed(2)
                             : '0.00'
                         }
                       </div>
@@ -427,7 +423,7 @@ const BookRide = () => {
             <CardFooter className="flex flex-col space-y-4">
               <div className="w-full flex items-center space-x-2 text-sm text-gray-500">
                 <CreditCard className="h-4 w-4" />
-                <span>Payment: Wallet Balance</span>
+                <span>Payment: UPI / Wallet</span>
                 <Button variant="link" className="ml-auto p-0 h-auto">
                   Change
                 </Button>
@@ -445,7 +441,6 @@ const BookRide = () => {
         </div>
       </div>
       
-      {/* Booking confirmation dialog */}
       <Dialog open={isBookingConfirmed} onOpenChange={setIsBookingConfirmed}>
         <DialogContent>
           <DialogHeader>
@@ -490,10 +485,10 @@ const BookRide = () => {
             <div className="space-y-2">
               <div className="text-sm text-gray-500">Total Cost</div>
               <div className="font-bold text-lg">
-                ${selectedRide 
-                  ? (rideOptions.find(option => option.id === selectedRide)?.price || 0 + 1.5).toFixed(2)
+                ₹{selectedRide 
+                  ? (rideOptions.find(option => option.id === selectedRide)?.price || 0 + 99).toFixed(2)
                   : selectedDriver
-                    ? (availableDrivers.find(driver => driver.id === selectedDriver)?.price || 0 + 1.5).toFixed(2)
+                    ? (availableDrivers.find(driver => driver.id === selectedDriver)?.price || 0 + 99).toFixed(2)
                     : '0.00'
                 }
               </div>

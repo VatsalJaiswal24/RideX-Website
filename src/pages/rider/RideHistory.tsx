@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import RiderLayout from "@/components/layouts/RiderLayout";
 import { 
@@ -33,8 +32,8 @@ const rideHistoryData = [
     time: "09:15 AM",
     from: "Home",
     to: "Office",
-    driver: "Dave Driver",
-    amount: "$15.50",
+    driver: "Rahul Sharma",
+    amount: "₹950.00",
     status: "completed"
   },
   {
@@ -43,8 +42,8 @@ const rideHistoryData = [
     time: "06:30 PM",
     from: "Office",
     to: "Home",
-    driver: "Michael Jones",
-    amount: "$16.25",
+    driver: "Vikram Singh",
+    amount: "₹1250.00",
     status: "completed"
   },
   {
@@ -53,8 +52,8 @@ const rideHistoryData = [
     time: "08:00 PM",
     from: "Home",
     to: "Restaurant",
-    driver: "Lisa Chen",
-    amount: "$12.75",
+    driver: "Arjun Mehta",
+    amount: "₹980.00",
     status: "completed"
   },
   {
@@ -63,8 +62,8 @@ const rideHistoryData = [
     time: "07:45 AM",
     from: "Home",
     to: "Gym",
-    driver: "Dave Driver",
-    amount: "$10.50",
+    driver: "Deepak Gupta",
+    amount: "₹850.00",
     status: "cancelled"
   }
 ];

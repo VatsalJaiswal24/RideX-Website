@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
@@ -33,7 +32,7 @@ const Index = () => {
     {
       icon: <CreditCard className="h-12 w-12 text-primary" />,
       title: "Easy Payments",
-      description: "Multiple payment options including credit cards, digital wallets, and cash."
+      description: "Multiple payment options including UPI, credit cards, digital wallets, and cash."
     },
     {
       icon: <Star className="h-12 w-12 text-primary" />,
@@ -44,19 +43,19 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Emily Johnson",
+      name: "Priya Sharma",
       role: "Regular Rider",
       quote: "RideX has transformed my daily commute. The app is so easy to use, and the drivers are always professional and punctual.",
       image: "https://i.pravatar.cc/150?img=5"
     },
     {
-      name: "Michael Chen",
+      name: "Vikram Patel",
       role: "RideX Driver",
       quote: "Being a RideX driver has provided me with a flexible source of income. The platform is driver-friendly and the support team is responsive.",
       image: "https://i.pravatar.cc/150?img=8"
     },
     {
-      name: "Sophia Rodriguez",
+      name: "Ananya Desai",
       role: "Business Traveler",
       quote: "I rely on RideX for all my business trips. The service is consistent, and I never have to worry about transportation.",
       image: "https://i.pravatar.cc/150?img=9"
@@ -69,7 +68,6 @@ const Index = () => {
       <header className="sticky top-0 z-30 bg-white border-b border-gray-200">
         <div className="container py-4 px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            {/* Mobile menu */}
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
@@ -110,14 +108,12 @@ const Index = () => {
               </SheetContent>
             </Sheet>
             
-            {/* Logo */}
             <div className="font-bold text-xl">
               <span className="text-primary">Ride</span>
               <span className="text-accent">X</span>
             </div>
           </div>
           
-          {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <Button variant="ghost" onClick={() => navigate("/")}>
               Home
@@ -308,7 +304,7 @@ const Index = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">RideX</h3>
               <p className="text-gray-400">
-                Your trusted carpooling platform for safe, affordable, and convenient rides.
+                Your trusted carpooling platform for safe, affordable, and convenient rides. Created by Vatsal Jaiswal.
               </p>
             </div>
             
@@ -378,7 +374,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} RideX. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} RideX by Vatsal Jaiswal. All rights reserved.</p>
           </div>
         </div>
       </footer>
