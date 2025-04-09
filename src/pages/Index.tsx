@@ -172,9 +172,12 @@ const Index = () => {
             </div>
             <div className="hidden md:block">
               <img 
-                src="https://images.unsplash.com/photo-1532975304279-a2d2febe3a20?auto=format&fit=crop&q=80&w=1000" 
+                src="/carpooling.jpg" 
                 alt="Carpooling" 
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-full h-auto"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1532975304279-a2d2febe3a20?auto=format&fit=crop&q=80&w=1000";
+                }}
               />
             </div>
           </div>
